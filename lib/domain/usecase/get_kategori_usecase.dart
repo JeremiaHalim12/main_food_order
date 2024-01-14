@@ -7,7 +7,6 @@ class GetKategoriUseCase {
   GetKategoriUseCase({required this.kategoriRepository});
 
   static Future<List<Kategori>> execute() async {
-    final kategoriJson = await KategoriRepository().getKategori();
-    return kategoriJson.map((e) => Kategori.fromJson(e)).toList();
+    return await KategoriRepository().getKategori();
   }
 }
