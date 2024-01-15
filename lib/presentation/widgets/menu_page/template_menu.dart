@@ -1,22 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:main_food_order/domain/usecase/get_makanan_usecase.dart';
 import 'package:main_food_order/presentation/widgets/iconback/back_icon_pop.dart';
+import 'package:main_food_order/presentation/widgets/popup/message.dart';
 
-class TemplateMenu extends StatelessWidget {
+class TemplateMenu extends StatefulWidget {
   final String gambar;
   final double position;
   final int index;
   final double width;
   final double height;
-  const TemplateMenu(
-      {super.key,
-      required this.gambar,
-      required this.position,
-      required this.index,
-      required this.width,
-      required this.height});
+  const TemplateMenu({
+    super.key,
+    required this.gambar,
+    required this.position,
+    required this.index,
+    required this.width,
+    required this.height,
+  });
+
+  @override
+  State<TemplateMenu> createState() => _TemplateMenuState();
+}
+
+class _TemplateMenuState extends State<TemplateMenu> {
 
   @override
   Widget build(BuildContext context) {
@@ -59,12 +69,12 @@ class TemplateMenu extends StatelessWidget {
 
             // GAMBAR MENU
             Positioned(
-              bottom: position,
+              bottom: widget.position,
               child: Image(
-                image: AssetImage(gambar),
+                image: AssetImage(widget.gambar),
                 fit: BoxFit.contain,
-                width: width,
-                height: height,
+                width: widget.width,
+                height: widget.height,
               ),
             ),
 
@@ -129,12 +139,38 @@ class TemplateMenu extends StatelessWidget {
                       ),
                     ),
                     child: Center(
-                      child: Text(
-                        "Add to Cart",
-                        style: GoogleFonts.leagueSpartan(
-                          fontSize: 17,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.black,
+                      child: GestureDetector(
+                        onTap: () {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Container(
+                                height: 50,
+                                child: Center(
+                                  child: Text(
+                                    "Item has been added to cart",
+                                    style: GoogleFonts.leagueSpartan(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.black,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ),
+                              ),
+                              duration: const Duration(seconds: 2),
+                              backgroundColor: const Color(0xFFFFD65C),
+                              behavior: SnackBarBehavior.floating,
+                              margin: const EdgeInsets.only(bottom: 680),
+                            ),
+                          );
+                        },
+                        child: Text(
+                          "Add to Cart",
+                          style: GoogleFonts.leagueSpartan(
+                            fontSize: 17,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.black,
+                          ),
                         ),
                       ),
                     ),
@@ -151,7 +187,7 @@ class TemplateMenu extends StatelessWidget {
                 builder: (context, snapshot) {
                   if (snapshot.hasData) {
                     return Text(
-                      snapshot.data![index].toString(),
+                      snapshot.data![widget.index].toString(),
                       style: GoogleFonts.leagueSpartan(
                         fontSize: 24,
                         fontWeight: FontWeight.w700,
@@ -178,7 +214,7 @@ class TemplateMenu extends StatelessWidget {
                   builder: (context, snapshot) {
                     if (snapshot.hasData) {
                       return Text(
-                        snapshot.data![index].deskripsi(),
+                        snapshot.data![widget.index].deskripsi(),
                         style: GoogleFonts.leagueSpartan(
                           fontSize: 24,
                           fontWeight: FontWeight.w400,
@@ -206,7 +242,7 @@ class TemplateMenu extends StatelessWidget {
                   builder: (context, snapshot) {
                     if (snapshot.hasData) {
                       return Text(
-                        snapshot.data![index].namaMakanan(),
+                        snapshot.data![widget.index].namaMakanan(),
                         style: GoogleFonts.leagueSpartan(
                           fontSize: 35,
                           fontWeight: FontWeight.w600,

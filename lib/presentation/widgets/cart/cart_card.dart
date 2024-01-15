@@ -57,82 +57,82 @@ class ItemCartCard extends StatelessWidget {
           top: 37,
           child: Row(
             children: [
-              Column(
-                children: [
-                  Row(
-                    children: [
-                      Image(
-                        image: AssetImage("lib/asset/steak.png"),
-                        fit: BoxFit.contain,
-                        width: 55,
-                        height: 55,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(left: 4),
-                        child: CartItem(
-                            item: "Chicken Fried Rice", price: "Rp 25.000"),
-                      ),
-                      ItemAmount(
-                        jarak: 5,
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 12,
-                  ),
-                  Garis(),
-                  SizedBox(
-                    height: 12,
-                  ),
-                  Row(
-                    children: [
-                      Image(
-                        image: AssetImage("lib/asset/juice.png"),
-                        fit: BoxFit.contain,
-                        width: 55,
-                        height: 55,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(left: 4),
-                        child:
-                            CartItem(item: "Guava Juice", price: "Rp 15.000"),
-                      ),
-                      ItemAmount(
-                        jarak: 45,
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 12,
-                  ),
-                  Garis(),
-                  SizedBox(
-                    height: 12,
-                  ),
-                  Row(
-                    children: [
-                      Image(
-                        image: AssetImage("lib/asset/friednoodle.png"),
-                        fit: BoxFit.contain,
-                        width: 55,
-                        height: 55,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(left: 4),
-                        child:
-                            CartItem(item: "Chicken Soup", price: "Rp 15.000"),
-                      ),
-                      ItemAmount(
-                        jarak: 40,
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 12,
-                  ),
-                  Garis(),
-                ],
-              ),
+              // Column(
+              //   children: [
+              //     Row(
+              //       children: [
+              //         Image(
+              //           image: AssetImage("lib/asset/steak.png"),
+              //           fit: BoxFit.contain,
+              //           width: 55,
+              //           height: 55,
+              //         ),
+              //         Padding(
+              //           padding: EdgeInsets.only(left: 4),
+              //           child: CartItem(
+              //               item: "Chicken Fried Rice", price: "Rp 25.000"),
+              //         ),
+              //         ItemAmount(
+              //           jarak: 5,
+              //         ),
+              //       ],
+              //     ),
+              //     SizedBox(
+              //       height: 12,
+              //     ),
+              //     Garis(),
+              //     SizedBox(
+              //       height: 12,
+              //     ),
+              //     Row(
+              //       children: [
+              //         Image(
+              //           image: AssetImage("lib/asset/juice.png"),
+              //           fit: BoxFit.contain,
+              //           width: 55,
+              //           height: 55,
+              //         ),
+              //         Padding(
+              //           padding: EdgeInsets.only(left: 4),
+              //           child:
+              //               CartItem(item: "Guava Juice", price: "Rp 15.000"),
+              //         ),
+              //         ItemAmount(
+              //           jarak: 45,
+              //         ),
+              //       ],
+              //     ),
+              //     SizedBox(
+              //       height: 12,
+              //     ),
+              //     Garis(),
+              //     SizedBox(
+              //       height: 12,
+              //     ),
+              //     Row(
+              //       children: [
+              //         Image(
+              //           image: AssetImage("lib/asset/friednoodle.png"),
+              //           fit: BoxFit.contain,
+              //           width: 55,
+              //           height: 55,
+              //         ),
+              //         Padding(
+              //           padding: EdgeInsets.only(left: 4),
+              //           child:
+              //               CartItem(item: "Chicken Soup", price: "Rp 15.000"),
+              //         ),
+              //         ItemAmount(
+              //           jarak: 40,
+              //         ),
+              //       ],
+              //     ),
+              //     SizedBox(
+              //       height: 12,
+              //     ),
+              //     Garis(),
+              //   ],
+              // ),
             ],
           ),
         ),

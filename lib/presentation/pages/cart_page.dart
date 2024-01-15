@@ -7,9 +7,17 @@ import 'package:main_food_order/presentation/widgets/customButton/button.dart';
 import 'package:main_food_order/presentation/widgets/iconback/back_icon_push.dart';
 import 'package:main_food_order/presentation/widgets/navbar/custom_bottomnavbar.dart';
 
-class CartPage extends StatelessWidget {
-  const CartPage({super.key});
+class CartPage extends StatefulWidget {
+  final String menu;
+  final int harga;
+  final int item;
+  const CartPage({super.key, this.menu = 'No Item', this.harga = 0, this.item = 0});
 
+  @override
+  State<CartPage> createState() => _CartPageState();
+}
+
+class _CartPageState extends State<CartPage> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -42,6 +50,8 @@ class CartPage extends StatelessWidget {
               const SizedBox(
                 height: 2,
               ),
+
+              // ITEM
               const ItemCartCard(
                 widthKuning: 329,
                 heightKuning: 371,
@@ -51,6 +61,8 @@ class CartPage extends StatelessWidget {
               const SizedBox(
                 height: 31,
               ),
+
+              // TOTAL HARGA
               const TotalPriceCard(
                   widthKuning: 329,
                   heightKuning: 188,
@@ -59,6 +71,8 @@ class CartPage extends StatelessWidget {
               const SizedBox(
                 height: 30,
               ),
+
+              // BUTTON PAYMENT
               GestureDetector(
                 onTap: () {
                   Navigator.push(

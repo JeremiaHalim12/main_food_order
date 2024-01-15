@@ -7,9 +7,7 @@ import 'package:main_food_order/domain/usecase/get_makanan_usecase.dart';
 class CustomFavorite extends StatelessWidget {
   final String gambar;
   final int index;
-  const CustomFavorite(
-      {super.key,
-      required this.gambar, required this.index});
+  const CustomFavorite({super.key, required this.gambar, required this.index});
 
   @override
   Widget build(BuildContext context) {
@@ -47,46 +45,44 @@ class CustomFavorite extends StatelessWidget {
                   height: 30,
                 ),
                 FutureBuilder(
-                        future: GetMakananUseCase.execute(),
-                        builder: (context, snapshot) {
-                          if (snapshot.hasData) {
-                            return Text(
-                              snapshot.data![index].namaMakanan(),
-                              style: GoogleFonts.leagueSpartan(
-                                fontSize: 20,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.white
-                              ),
-                            );
-                          } else if (snapshot.hasError) {
-                            return Text('Error: ${snapshot.error}');
-                          } else {
-                            return const Text('No Data');
-                          }
-                        },
-                      ),
+                  future: GetMakananUseCase.execute(),
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      return Text(
+                        snapshot.data![index].namaMakanan(),
+                        style: GoogleFonts.leagueSpartan(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.white),
+                      );
+                    } else if (snapshot.hasError) {
+                      return Text('Error: ${snapshot.error}');
+                    } else {
+                      return const Text('No Data');
+                    }
+                  },
+                ),
                 const SizedBox(
                   height: 5,
                 ),
                 FutureBuilder(
-                        future: GetMakananUseCase.execute(),
-                        builder: (context, snapshot) {
-                          if (snapshot.hasData) {
-                            return Text(
-                              snapshot.data![index].toString(),
-                              style: GoogleFonts.leagueSpartan(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.white
-                              ),
-                            );
-                          } else if (snapshot.hasError) {
-                            return Text('Error: ${snapshot.error}');
-                          } else {
-                            return const Text('No Data');
-                          }
-                        },
-                      ),
+                  future: GetMakananUseCase.execute(),
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      return Text(
+                        snapshot.data![index].toString(),
+                        style: GoogleFonts.leagueSpartan(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.white),
+                      );
+                    } else if (snapshot.hasError) {
+                      return Text('Error: ${snapshot.error}');
+                    } else {
+                      return const Text('No Data');
+                    }
+                  },
+                ),
               ],
             )),
       ],

@@ -20,6 +20,10 @@ class Makanan {
     return 'Rp $hargaMenu';
   }
 
+  int hargaMakanan() {
+    return hargaMenu;
+  }
+
   String deskripsi() {
     return desc;
   }

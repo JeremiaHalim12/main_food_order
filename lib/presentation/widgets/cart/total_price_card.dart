@@ -52,87 +52,88 @@ class TotalPriceCard extends StatelessWidget {
           ),
         ),
         Positioned(
-            top: 30,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: [
-                    Text(
-                      "Item Total",
-                      style: GoogleFonts.leagueSpartan(
-                        fontSize: 17,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.black,
-                      ),
+          top: 30,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Text(
+                    "Item Total",
+                    style: GoogleFonts.leagueSpartan(
+                      fontSize: 17,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.black,
                     ),
-                    const SizedBox(
-                      width: 130,
+                  ),
+                  const SizedBox(
+                    width: 130,
+                  ),
+                  Text(
+                    "Rp 0",
+                    style: GoogleFonts.leagueSpartan(
+                      fontSize: 17,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.black,
                     ),
-                    Text(
-                      "Rp 55.000",
-                      style: GoogleFonts.leagueSpartan(
-                        fontSize: 17,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.black,
-                      ),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 8,
+              ),
+              Row(
+                children: [
+                  Text(
+                    "Tax & Service (10%)",
+                    style: GoogleFonts.leagueSpartan(
+                      fontSize: 17,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.black,
                     ),
-                  ],
-                ),
-                const SizedBox(
-                  height: 8,
-                ),
-                Row(
-                  children: [
-                    Text(
-                      "Tax & Service (10%)",
-                      style: GoogleFonts.leagueSpartan(
-                        fontSize: 17,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.black,
-                      ),
+                  ),
+                  const SizedBox(
+                    width: 60,
+                  ),
+                  Text(
+                    "Rp 0",
+                    style: GoogleFonts.leagueSpartan(
+                      fontSize: 17,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.black,
                     ),
-                    const SizedBox(
-                      width: 60,
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 63,
+              ),
+              Row(
+                children: [
+                  Text(
+                    "Total",
+                    style: GoogleFonts.leagueSpartan(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black,
                     ),
-                    Text(
-                      "Rp 5.500",
-                      style: GoogleFonts.leagueSpartan(
-                        fontSize: 17,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.black,
-                      ),
+                  ),
+                  const SizedBox(
+                    width: 140,
+                  ),
+                  Text(
+                    "Rp 0",
+                    style: GoogleFonts.leagueSpartan(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black,
                     ),
-                  ],
-                ),
-                const SizedBox(
-                  height: 63,
-                ),
-                Row(
-                  children: [
-                    Text(
-                      "Total",
-                      style: GoogleFonts.leagueSpartan(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.black,
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 140,
-                    ),
-                    Text(
-                      "Rp 60.500",
-                      style: GoogleFonts.leagueSpartan(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.black,
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            )),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
       ],
     );
   }
